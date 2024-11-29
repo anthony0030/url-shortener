@@ -20,5 +20,15 @@ class Base62 < ApplicationRecord
   end
 
   def self.decode(string)
+    number = 0
+
+    string.reverse.each_char.each_with_index do |character, index|
+      power = BASE**index
+      character_index = ALPHABET.index(character)
+
+      number += character_index * power
+    end
+
+    number
   end
 end
