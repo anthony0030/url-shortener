@@ -2,3 +2,12 @@
 # yarn lockfile v1
 
 
+"@anthony0030/bootwind@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@anthony0030/bootwind/-/bootwind-0.0.1.tgz#5287da8f5e25b3c1738d931daed0bf9cbeaf9dca"
+  integrity sha512-XVyJNdH8PpIwwok2nsTFQ+4hlmWM6qvytaqLQOmy2skv4H7YXK3jx7BW3d23Ylqdpe+OvhZ5YeozWTcUqVLx3w==
+
+colord@^2.9.3:
+  version "2.9.3"
+  resolved "https://registry.yarnpkg.com/colord/-/colord-2.9.3.tgz#4f8ce919de456f1d5c1c368c307fe20f3e59fb43"
+  integrity sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==

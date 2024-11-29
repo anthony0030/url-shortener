@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UrlShortener</title>
+    <title>URL Shortener 9000</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/e8feeadaa0.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="flex flex-col min-h-screen">
+    <%= render "flash" %>
+    <header class="bg-green-600 text-white px-4 py-2">
+      <div class="flex container w-100 justify-between content-center">
+        <h1 class="text-2xl"><%= link_to 'URL Shortener 9000', root_path %></h1>
+
+        <nav class="flex justify-center items-center gap-5">
+          <%# if user_signed_in? %>
+            <%#= link_to 'Profile', edit_user_registration_path %>
+            <%#= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "h-fit" %>
+          <%# else %>
+            <%#= link_to 'Log In', new_user_session_path %>
+            <%#= link_to 'Sign Up', new_user_registration_path %>
+          <%# end %>
+        </nav>
+
+      </div>
+    </header>
+
+    <main class="flex flex-1 prose bg-gray-100" style="max-width: unset;">
+      <div class="flex-1 container bg-white p-4">
+        <%= yield %>
+      </div>
     </main>
+
+    <footer class="bg-gray-600 text-white">
+      <div class="container">
+        Made by Anthony Veadury
+      </div>
+    </footer>
   </body>
 </html>
