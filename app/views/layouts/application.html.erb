@@ -7,8 +7,10 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= javascript_importmap_tags %>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://kit.fontawesome.com/e8feeadaa0.js" crossorigin="anonymous"></script>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body class="flex flex-col min-h-screen">
