@@ -34,5 +34,8 @@
     "yml",
     "COBOL",
     "ACUCOBOL"
+  ],
+  "cSpell.words": [
+    "kwargs"
   ]
 }

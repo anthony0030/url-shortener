@@ -1,0 +1,9 @@
+<%= form_with model: @link do |form| %>
+  <div class="flex gap-2 items-center">
+    <div class="form-group flex-1 mb-0">
+      <%#= form.label :title, class: "form-label" %>
+      <%= form.url_field :url, placeholer: "https://example.org", required: true, autofocus: true, class: "form-control h-full w-full" %>
+    </div>
+    <%= form.submit "Save", class: "btn btn-primary h-full" %>
+  </div>
+<% end %>

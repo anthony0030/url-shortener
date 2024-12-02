@@ -1,0 +1,12 @@
+<h1>Edit Link</h1>
+
+<%= render partial: "form", locals: { link: @link } %>
+
+<div class="flex my-3 gap-3 items-center">
+  <%= link_to "Cancel", @link, class: "btn btn-light" %>
+  <span>or</span>
+  <%= button_to "Delete", @link, method: :delete, data: { turbo_confirm: "Are you Sure?" }, class: "btn btn-danger" %>
+</div>
+
+
+<%= console %>
