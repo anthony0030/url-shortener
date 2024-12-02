@@ -1,12 +1,30 @@
 <div id="<%= dom_id(link) %>">
-  <%= link_to link.to_param, link %>
-  <%= link.url %>
-  <%= pluralize link.views_count, "view" %>
+  <%= turbo_stream_from link %>
 
-  <%= link_to view_path(link), target: :_blank, data: { turbo: false } do %>
-    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-  <% end %>
+  <div class="grid grid-cols-8 items-center py-4">
+    <div class="col-span-5">
+      <%= link_to view_path(link), target: :_blank, data: {turbo: false}, class: "no-underline" do %>
+        <%= favicon_image_tag link.domain, class: "inline-block m-0" %>
+        <%= link.title || link.url %>
+        <%= tag.div link.description, class: "text-xs text-gray-700" %>
+        <i class="fa-solid fa-arrow-up-right-from-square inline-block w-4 h-4"></i>
+      <% end %>
+    </div>
 
-  <%= favicon_image_tag link.domain %>
+    <div class="col-span-2 text-center text-xs">
+      <%= link_to(
+        pluralize(link.views_count, "view"),
+        link,
+        class: "px-2 py-1.5 rounded bg-gray-100 no-underline"
+      )%>
+    </div>
 
+    <div class="text-center text-xs">
+      <%= button_tag(
+        "Copy",
+        class: "btn btn-primary",
+        data: { controller: "clipboard", clipboard_text: view_url(link) }
+      )%>
+    </div>
+  </div>
 </div>
