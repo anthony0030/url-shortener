@@ -20,13 +20,13 @@
         <h1 class="text-2xl"><%= link_to 'URL Shortener 9000', root_path %></h1>
 
         <nav class="flex justify-center items-center gap-5">
-          <%# if user_signed_in? %>
-            <%#= link_to 'Profile', edit_user_registration_path %>
-            <%#= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "h-fit" %>
-          <%# else %>
-            <%#= link_to 'Log In', new_user_session_path %>
-            <%#= link_to 'Sign Up', new_user_registration_path %>
-          <%# end %>
+          <% if user_signed_in? %>
+            <%= link_to 'Profile', edit_user_registration_path %>
+            <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "h-fit" %>
+          <% else %>
+            <%= link_to 'Log In', new_user_session_path %>
+            <%= link_to 'Sign Up', new_user_registration_path %>
+          <% end %>
         </nav>
 
       </div>
