@@ -1,4 +1,9 @@
 <div id="<%= dom_id(link) %>">
   <%= link_to link.to_param, link %>
   <%= link.url %>
+
+  <%= link_to view_path(link), target: :_blank, data: { turbo: false } do %>
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+  <% end %>
+
 </div>
