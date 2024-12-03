@@ -1,13 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* * Tailwind * */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-/*
+/* * Custom * */
+@import "./base/_index.css";
+@import "./components/_index.css";
+@import "./utilities/_index.css";
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
-}
-
-*/
+/* * Node Modules * */

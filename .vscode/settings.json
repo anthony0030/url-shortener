@@ -39,6 +39,7 @@
     "Encryptor",
     "hatchboxio",
     "kwargs",
+    "pagy",
     "thassos",
     "Veaudry"
   ]

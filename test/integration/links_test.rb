@@ -7,8 +7,16 @@ class LinksTest < ActionDispatch::IntegrationTest
   end
 
   test 'Links index pagination' do
-    get links_path(page: 2)
+    50.times { Link.create(url: 'https://www.example.org') }
+    get links_path
     assert_response :ok
+    assert_select 'a', '<'
+  end
+
+  test 'Links index pagination handles overflow' do
+    Link.destroy_all
+    get links_path(page: 2)
+    assert_redirected_to root_path
   end
 
   test 'Links show' do
