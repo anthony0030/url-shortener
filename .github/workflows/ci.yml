@@ -35,6 +35,17 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install
 
+      - name: Debug installed packages
+        run: |
+          yarn list --pattern @anthony0030/bootwind
+          ls -la node_modules/@anthony0030/bootwind
+        shell: bash
+
+      - name: Precompile Tailwind
+        run: yarn build # Or your specific Tailwind build command
+        env:
+          RAILS_ENV: test
+
       - name: Run tests
         env:
           DATABASE_URL: postgres://postgres:password@localhost:5432/test
