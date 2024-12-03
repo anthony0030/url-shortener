@@ -1,3 +1,5 @@
+require 'faker'
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -27,3 +29,17 @@ friend_user.update!(
   password: 'zHa!b9cesf',
   password_confirmation: 'zHa!b9cesf'
 )
+
+if Link.count < 100
+  puts 'Seeding Links...'
+
+  100.times.each do
+    user = [admin_user, friend_user, nil].sample
+    Link.create!(
+      url: Faker::Internet.unique.url,
+      user: user
+    )
+  end
+
+  puts 'Seeding complete!'
+end
