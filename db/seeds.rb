@@ -15,7 +15,7 @@ admin_user = User.where(email: 'anthonyveaudry@gmail.com').first_or_initialize
 admin_user.update!(
   first_name: 'Anthony',
   last_name: 'Veaudry',
-  # admin: true,
+  admin: true,
   password: 'uNHNk-9FAQ',
   password_confirmation: 'uNHNk-9FAQ'
 )
@@ -25,7 +25,7 @@ friend_user = User.where(email: 'sebastian@go-thassos.gr').first_or_initialize
 friend_user.update!(
   first_name: 'Sebastian',
   last_name: 'Riddle',
-  # admin: false,
+  admin: false,
   password: 'zHa!b9cesf',
   password_confirmation: 'zHa!b9cesf'
 )
